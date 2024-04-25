@@ -1,0 +1,50 @@
+// const heading = React.createElement("h1",
+// { "id":"heading2011"},
+
+// "Hello world from React by Nagesh");
+
+//     const root= ReactDOM.createRoot(document.getElementById("root"));
+//     root.render(heading); //Important Note:Here render will replace whatever in the "root" div tag(in undex.html) with the value we are passsing in it
+//(here we are passing "heading" inside root.render, so content in root div tag will be replaced by "heading" )
+
+//--JSX is not part of React, both are different.
+//--JSX is HTML-like or XML-like syntax.
+// const jsxheading =<h1 id="heading2011">Hello world from React by Nagesh</h1>
+// const root= ReactDOM.createRoot(document.getElementById("root"));
+// root.render(jsxheading);
+
+//How to write code in JSX
+// const jsxheading =(<h1 className="head" tabIndex="5"
+// >Hello world from React by Nagesh Reddy
+// </h1>)
+// const root= ReactDOM.createRoot(document.getElementById("root"));
+// root.render(jsxheading);
+
+
+Difference b/w React Element and React Functional Element
+
+/*React Element*/
+///Starts from here
+// const heading=(
+//     <h1 className="head" tabIndex="1">
+//     React using JSX and React Element
+
+//     </h1>
+// );
+
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// root.render(heading);
+///ends here
+
+/*React Functional Element*/
+const Title = () => <h1 className="title">This is title tag</h1>;
+//This is called Componenet composition-->calling one component in another component
+const HeadingComponent = () => (
+  <div id="container">
+    <Title />
+    <h1 className="head" tabIndex="1">
+      React using JSX and React Functional Component
+    </h1>
+  </div>
+);

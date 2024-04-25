@@ -1,0 +1,26 @@
+# Uses of "parcel" bundler
+- Builds development server
+- Local server
+- HMR - Hot Module Replacement(Whenever you save
+ a file, changes will automatically appears in server
+)
+- Caching for faster Builds
+- Minification,Compress and Bundling
+- Consistent Hashing(Read about this from internrt)
+- Image optimisation
+- Code splitting
+- Differential Bundling - support older browsers
+- Diagnostic
+- Error Handling
+- HTTPs support
+- Tree shaking-Removes unused code
+- Different development and prod Builds
+
+
+Note:
+Remove  "main": "App.js" code from package.json, b'coz while using parcel we specify the entry file in the command itself
+
+//How to build production ready for application
+ command-->npx parcel build index.html
+ //How to build normal/development application
+ command-->npx parcel index.html
