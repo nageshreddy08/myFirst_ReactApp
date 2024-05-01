@@ -27,8 +27,8 @@ const fetchData = async ()=>{
   // const restData=json.data.map(item=>item.card.card.info)
 //    setListOfrestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
  
-      setListOfrestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-      setSearchedRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setListOfrestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setSearchedRestaurants(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 }
       
     return listOfRestaurants.length === 0 ? 
