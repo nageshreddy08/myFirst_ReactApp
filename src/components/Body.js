@@ -2,14 +2,15 @@ import RestaurantCard from "./RestaurantCard";
 //import resList from "../utils.js/restaurantData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 const Body=()=>{
 
-const [listOfRestaurants, setListOfrestaurants] = useState([])
+const [listOfRestaurants, setListOfrestaurants] = useState([]);
 
-const [searchedRestaurant, setSearchedRestaurants]=useState([])
-const [searchText, setSearchText]= useState("")
+const [searchedRestaurant, setSearchedRestaurants]=useState([]);
+const [searchText, setSearchText]= useState("");
 
 console.log("Body rendered...")
 useEffect(()=>{
@@ -59,7 +60,7 @@ console.log(searchText)
         onClick={()=>{
 
           filteredRestaurant =listOfRestaurants.filter(
-            (res)=>res.info.avgRating > 4.1
+            (res)=>res.info.avgRating > 3.0
           );
           setListOfrestaurants(filteredRestaurant);
 
@@ -70,8 +71,9 @@ console.log(searchText)
         </div>
         <div className ="res-container"> 
         {searchedRestaurant.map((restaurants) =>(
-            <RestaurantCard key={restaurants.info.id} resData={restaurants?.info}/>
-            //whenever we are using map or looping on, we should always give key
+          <Link key={restaurants.info.id} to={'/restaurants/'+ restaurants.info.id}
+           > <RestaurantCard  resData={restaurants?.info}/>
+            </Link>
           ))
         }
   
