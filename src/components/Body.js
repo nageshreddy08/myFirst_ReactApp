@@ -60,7 +60,7 @@ console.log(searchText)
         onClick={()=>{
 
           filteredRestaurant =listOfRestaurants.filter(
-            (res)=>res.info.avgRating > 3.0
+            (res)=>res.info.avgRating > 4.5
           );
           setListOfrestaurants(filteredRestaurant);
 
@@ -69,6 +69,7 @@ console.log(searchText)
           Top Rated Restaurants</button>
 
         </div>
+
         <div className ="res-container"> 
         {searchedRestaurant.map((restaurants) =>(
           <Link key={restaurants.info.id} to={'/restaurants/'+ restaurants.info.id}

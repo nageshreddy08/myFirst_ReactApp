@@ -11,3 +11,6 @@ Important React Hooks
 
 MODULE Error
 -->use "npm i @types/react-router-dom" command to resolve error due to "react-router-dom"
+
+# For Life Cycle components details, refer below
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
