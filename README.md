@@ -14,3 +14,7 @@ MODULE Error
 
 # For Life Cycle components details, refer below
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+
+for nested menu
+use  c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
