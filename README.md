@@ -16,5 +16,13 @@ MODULE Error
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 
-for nested menu
+-->for nested menu
 use  c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our Store
+- Connect our Store to our App
+- Slice (cartSlice)
+- dispatch(Action)
+- Selector(TO read data from Store)

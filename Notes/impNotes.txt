@@ -24,3 +24,10 @@ Remove  "main": "App.js" code from package.json, b'coz while using parcel we spe
  command-->npx parcel build index.html
  //How to build normal/development application
  command-->npx parcel index.html
+
+
+ //Redux updates
+ start from 1:22
+
+ //Testing
+ ->Installed all packages required for Testing->31-oct
