@@ -7,7 +7,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import ErrorPage from "./components/ErrorPage";
+//import ErrorPage from "./components/ErrorPage";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
@@ -63,7 +63,6 @@ const appRouter = createBrowserRouter([
     errorElement: <ErrorPage />
   },
 ]);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<RouterProvider router={appRouter} />);
