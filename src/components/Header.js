@@ -1,29 +1,40 @@
 import { LOGO_URL } from "../utils/constants.js";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import UserContext from "../utils/UserContext.js";
 import { useSelector } from "react-redux";
+import useFetchApi from "../utils/useFetchApi.js";
 //use this command to resolve
 const Header = () => {
-  const [userInfo, setUserInfo] = useState("Username");
-  const [btnName, setbtnName] = useState(["Login"]);
+ // const [userInfo, setUserInfo] = useState("Username");
+  const [btnName, setbtnName] = useState("Login");
+  const apiResponse=useFetchApi("https://api.github.com/users/nageshreddy08");
+  console.log("Api Response from custom hook:")
+  console.log(apiResponse);
 
-  useEffect(() => {
-    getUserData();
-  }, []);
+  // useEffect(() => {
+  //   getUserData();
+  // }, []);
 
-  const getUserData = async () => {
-    const data = await fetch("https://api.github.com/users/nageshreddy08");
-    const json = await data?.json();
-    setUserInfo(json);
+  const handleLogin=()=>{
+    if("Login"){
+      setbtnName("Logout");
+    }
+    else{
+      setbtnName("Login");
+    }
   };
 
-  //console.log("Header Rendered");
-  const { login } = userInfo;
+  // const getUserData = async () => {
+  //   const data = await fetch("https://api.github.com/users/nageshreddy08");
+  //   const json = await data?.json();
+  //   setUserInfo(json);
+  // };
 
-const data=useContext(UserContext);
-//console.log(data);
+  //console.log("Header Rendered");
+  //const { login } = userInfo;
+
+const data=useContext(UserContext);//Accessing the data from useContext without props drilling
 
 //Subscribing to Store
 const cartItems = useSelector((store)=> {
@@ -36,7 +47,9 @@ const cartItems = useSelector((store)=> {
       </div>
       <div className="flex items-center">
         <ul className="flex p-2 m-2">
-          <li className="p-4">User:{login}</li>
+       
+         <li className="p-4" testid="User">User:<b>{apiResponse?.name}</b></li> 
+        
           <li className="p-4">
             <Link to="/">Home</Link>
           </li>
@@ -53,10 +66,8 @@ const cartItems = useSelector((store)=> {
            <Link to="/cart">Cart - {cartItems.length} items</Link>
           </li>
           <button
-            class="login"
-            onClick={() =>
-              btnName === "Login" ? setbtnName("Logout") : setbtnName("Login")
-            }
+            className="login"
+            onClick={handleLogin}
           >
             {btnName}
           </button>

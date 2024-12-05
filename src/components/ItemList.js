@@ -8,7 +8,7 @@ const ItemList = ({ items }) => {
   //console.log(items);
   const handleAddItem=(item)=>{
     //Dispatch an Action
-    console.log(item);
+    //console.log(item);
     dispatch(addItem(item));
   };
 
@@ -16,6 +16,7 @@ const ItemList = ({ items }) => {
     <div>
       {items.map((item) => (
         <div
+        data-testid="foodItems"
           key={item.card.info.id}
           className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between"
         >

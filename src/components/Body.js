@@ -5,13 +5,15 @@ import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 
 
+
 const Body = () => {
   const [listOfRestaurants, setListOfrestaurants] = useState([]);
 
   const [searchedRestaurant, setSearchedRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
+  
 
-  console.log("Body rendered...");
+  
   useEffect(() => {
     fetchData();
   }, []);
@@ -44,6 +46,7 @@ const Body = () => {
         <div className="search m-4 p-4">
         <input
           type="text"
+          data-testid="searchInput"
           className="border border-solid border-black"
           value={searchText}
           onChange={(e) => {
@@ -52,7 +55,7 @@ const Body = () => {
         />
         <button className="px-3 py-3 bg-green-100 m-4 rounded-lg"
           onClick={() => {
-            console.log(searchText);
+            //console.log(searchText);
             const searchedRestaurant = listOfRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
             );
