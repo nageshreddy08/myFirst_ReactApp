@@ -1,0 +1,47 @@
+//To test the given text is rendered on the screen
+
+const checkMessage=screen.getByText("This is the grocery store...")
+        expect(checkMessage).toBeInTheDocument();
+
+//To test button loaded on the screen
+test("should load button inside Contact us page", () => {
+    render(<Contact />);
+
+    const button = screen.getByRole("button");
+
+    //Install npm i -D "@testing-library/jest-dom/extend-expect", if you get toBeInTheDocument() is not a function
+
+    expect(button).toBeInTheDocument();
+  });
+
+  //to test the count of buttons loaded
+  test("Should load 2 input text boxes in Contact us page", () => {
+    render(<Contact />);
+    //When u want to assert multiple items or when there are multiple items use "getAllByrole"
+    const inputBoxes = screen.getAllByRole("textbox");
+    expect(inputBoxes.length).toBe(2);
+  });
+
+//to click on button
+  const loginButton=screen.getByRole("button", { name:"Login" });
+  //getByRole is used to get element by Role,here Role is button
+
+    fireEvent.click(loginButton);
+    //-->use fireEvent to click on button
+
+    const logoutButton = screen.getByRole("button", { name:"Logout" });
+
+    expect(logoutButton).toBeInTheDocument();
+
+    //to make a dummy api call
+
+    global.fetch = jest.fn(() =>
+  Promise.resolve({
+    json: () => Promise.resolve(MOCK_DATA),
+  })
+);
+
+//Imp:
+it() and test() are same, these define test cases
+//act() is used to test when async operations are done, state changes,effect are done
+//fireEvent.click is used to click the button

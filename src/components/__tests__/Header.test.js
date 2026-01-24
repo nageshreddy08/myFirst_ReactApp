@@ -8,13 +8,12 @@ import MOCK_DATA from "../mocks/mockGithubDetails.json";
 // import { act } from "react-dom/test-utils"
 import {act} from 'react';
 
-
+//To test and make an api call
 global.fetch = jest.fn(() =>
   Promise.resolve({
     json: () => Promise.resolve(MOCK_DATA),
   })
 );
-
 
 it("Should render Header component with login button", async () => {
   await act(async ()=> { 
@@ -41,14 +40,10 @@ it("Should check cart with 0 items on Header Load", () => {
     );
   
     const cartItems=screen.getByText("Cart - 0 items");
-    
-
     expect(cartItems).toBeInTheDocument();
   });
 
 //This test case is failing to find Logout button, will check later
-
-
 it("Should change Login button to Logout on click", async () => {
     await act(async ()=>{
     render(
@@ -84,9 +79,7 @@ it("Should render userName inside Header component", async () => {
             </BrowserRouter>
           );
 });
-    
-  
-    const userItem=screen.getByText("User:nageshreddy08");
+    const userItem=screen.getByText("User:Nagesh K");
     expect(userItem).toBeInTheDocument();
   });
   

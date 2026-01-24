@@ -26,3 +26,5 @@ use  c.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.
 - Slice (cartSlice)
 - dispatch(Action)
 - Selector(TO read data from Store)
+
+

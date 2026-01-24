@@ -2,12 +2,12 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "This is ReactJS application By Nagesh.",
-  "main": "App.js",
+  
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest",
-    "watch-test":"jest --watch"
+    "watch-test": "jest --watch"
   },
   "keywords": [
     "React",
@@ -28,18 +28,28 @@
     "parcel": "^2.11.0",
     "postcss": "^8.4.47",
     "process": "^0.11.10",
-    "tailwindcss": "^3.4.15"
+    "tailwindcss": "^3.4.17"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.3.0",
+    "@types/react": "^19.1.6",
     "@types/react-router-dom": "^5.3.3",
     "react": "^18.3.1",
-    "react-dom": "^18.2.0",
-    "react-redux": "^9.1.2",
+    "react-dom": "^18.3.1",
+    "react-toastify": "^10.0.6",
+    "recoil": "^0.7.7",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.27.0",
     "redux": "^5.0.1"
   },
+  
+  "overrides": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+
   "browserslist": [
-    "last 2 versions"
+    "last 5 versions"
   ]
+  
 }
